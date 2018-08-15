@@ -14,24 +14,24 @@ interface IData {
 }
 
 interface ITodos2ViewProps {
-  data?: IData;
+  allTodos?: ITodo[];
   error?: ApolloError;
   loading: boolean;
 }
 
-const Todos2View = ({ data, error, loading }: ITodos2ViewProps) => {
+const Todos2View = ({ allTodos, error, loading }: ITodos2ViewProps) => {
   if (loading) {
     return <div>LOADING</div>
   };
   if (error !== undefined) {
     return <div>ERROR</div>
   };
-  if (data === undefined || data.allTodos === undefined) {
+  if (allTodos === undefined) {
     return <div>ERROR</div>
   }
   return (
     <div>
-      {data.allTodos.map((todo: any) => (
+      {allTodos.map((todo: ITodo) => (
         <Todo2
           key={todo.id}
           title={todo.title}
@@ -56,7 +56,7 @@ const Todos2 =  () => (
   <Todos2Query query={GET_TODOS}>
     {({ data, error, loading }) => (
       <Todos2View
-        data={data}
+        {...data}
         error={error}
         loading={loading}
       />

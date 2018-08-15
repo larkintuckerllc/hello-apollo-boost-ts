@@ -1,5 +1,8 @@
 import * as React from 'react';
 import './App.css';
+import Counter from './components/Counter';
+import Decrement from './components/Decrement';
+import Increment from './components/Increment';
 import Todos2 from './components/Todos2';
 
 import logo from './logo.svg';
@@ -15,6 +18,10 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <Counter />
+        <Decrement />
+        <Increment />
+        <h3>Todos 2</h3>
         <Todos2 />
       </div>
     );

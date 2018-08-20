@@ -19,16 +19,13 @@ interface ITodos2ViewProps {
   loading: boolean;
 }
 
-const Todos2View = ({ allTodos, error, loading }: ITodos2ViewProps) => {
+const Todos2View = ({ allTodos = [], error, loading }: ITodos2ViewProps) => {
   if (loading) {
     return <div>LOADING</div>
   };
   if (error !== undefined) {
     return <div>ERROR</div>
   };
-  if (allTodos === undefined) {
-    return <div>ERROR</div>
-  }
   return (
     <div>
       {allTodos.map((todo: ITodo) => (
@@ -54,9 +51,9 @@ class Todos2Query extends Query<IData, {}> {}
 
 const Todos2 =  () => (
   <Todos2Query query={GET_TODOS}>
-    {({ data, error, loading }) => (
+    {({ data = { allTodos: [] }, error, loading }) => (
       <Todos2View
-        {...data}
+        allTodos={data.allTodos}
         error={error}
         loading={loading}
       />

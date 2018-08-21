@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import Counter from './components/Counter';
+import Counter2 from './components/Counter2';
 import Decrement from './components/Decrement';
 import Increment from './components/Increment';
 import Todos2 from './components/Todos2';
@@ -18,9 +19,12 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <h3>Counter</h3>
         <Counter />
         <Decrement />
         <Increment />
+        <h3>Counter 2</h3>
+        <Counter2 />
         <h3>Todos 2</h3>
         <Todos2 />
       </div>

@@ -3,6 +3,7 @@ import './App.css';
 import Counter from './components/Counter';
 import Counter2 from './components/Counter2';
 import Counter3 from './components/Counter3';
+import Counter4 from './components/Counter4';
 import Decrement from './components/Decrement';
 import Increment from './components/Increment';
 import Todos2 from './components/Todos2';
@@ -28,6 +29,8 @@ class App extends React.Component {
         <Counter2 />
         <h3>Counter 3</h3>
         <Counter3 />
+        <h3>Counter 4</h3>
+        <Counter4 />
         <h3>Todos 2</h3>
         <Todos2 />
       </div>

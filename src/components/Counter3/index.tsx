@@ -29,8 +29,7 @@ class Counter3Query extends Query<IData,{}> {};
 
 const Counter3 = () => (
   <Counter3Query query={GET_COUNTER}>
-    {({ data = { counter3: 0 } }) => {
-      const counter3 = data.counter3 !== undefined ? data.counter3 : 0;
+    {({ data: { counter3 = 0 } = {} }) => {
       return (
         <Mutation mutation={DECREMENT_COUNTER} variables={{amount: AMOUNT}}>
           {decrementCounter => (

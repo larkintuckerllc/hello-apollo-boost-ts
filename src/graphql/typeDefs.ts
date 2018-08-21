@@ -4,6 +4,8 @@ export default `
   }
   type Mutation {
     decrementCounter(): Int
+    decrementCounter3(amount: Int): Int
     incrementCounter(): Int
+    incrementCounter3(amount: Int): Int
   } 
 `;

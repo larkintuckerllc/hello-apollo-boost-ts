@@ -4,7 +4,7 @@ import { Mutation, Query } from 'react-apollo';
 import Counter2View from './Counter2View';
 
 interface IData {
-  counter?: number;
+  counter: number;
 }
 const GET_COUNTER = gql`
   {
@@ -28,8 +28,7 @@ class Counter2Query extends Query<IData,{}> {};
 
 const Counter2 = () => (
   <Counter2Query query={GET_COUNTER}>
-    {({ data = { counter: 0 } }) => {
-      const counter = data.counter !== undefined ? data.counter : 0;
+    {({ data: { counter = 0 } = {} }) => {
       return (
         <Mutation mutation={DECREMENT_COUNTER}>
           {decrementCounter => (
